@@ -1,0 +1,155 @@
+@import "reset";
+@import "settings";
+@import "mixins";
+
+html{
+  background:$html;
+}
+
+body{
+  font-family:$normalfont;
+  font-size:$basefontsize;
+  border: $thickness solid $border;
+  max-width: 840px;
+  margin: 10px auto;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.16),-5px 5px 5px rgba(0,0,0,0.16);
+}
+
+::selection{
+  background: $brightyellow;
+  color: $black;
+}
+
+p,li{
+@include text;
+line-height:1.1;
+margin: 0.2em 0 0.8em;
+}
+
+h1,h2,h3,h4,h5,h6{@include headings($black);}
+
+h1{font-size:2.6em;}
+h2{font-size:2.2em;}
+h3{font-size:2em;}
+
+header{
+    background: $header;
+    border-bottom: $thickness solid $border;
+    padding:20px;
+  hgroup{
+  h1{
+  margin:0;
+    a{
+      display:block;
+      margin:0 auto;
+      background:url(/logo.png) transparent 0 0 no-repeat;
+      text-indent:-12345px;
+      height:120px;width:120px;
+      &:hover{  background:url(/logo.png) transparent -120px 0 no-repeat; }
+      &:active{ position: relative; top:4px;}
+      }
+  }
+  
+  h2{
+    color: #fff;
+    margin: 10px 0 0;
+    text-align: center;
+    font-size:1.8em;
+    font-weight: normal;
+    letter-spacing:0.26em;
+  }
+  }
+}
+
+#banner{
+  background: $banner;
+  padding: 20px 100px;
+  border-bottom: $thickness solid $border;
+  blockquote{
+    @include headings($quotetext);
+    line-height: 0.96;
+    font-size:2.0em;
+    text-align:center;
+  }
+  
+  cite{
+      color:$quotetext;
+      padding:0;margin:0;
+      font-style: italic;
+      font-size:1em;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      &:before{content:"\2605";padding-right:5px;font-style: normal;font-family: "Arial Unicode MS", Quivira, Symbola, Code2000, STIX,
+  "Linux Libertine", MingLiU, "DFKai-SB";}
+      &:after{content:"\2605";padding-left:5px;font-style: normal;}
+  } 
+}
+
+#main{
+  @include clearfix;
+  padding: 20px;
+  background:$main;
+  border-bottom: $thickness solid $border;
+  @include links($black,$black,$yellow);
+  .content{float:left;width:$mainwidth;}
+  .sidebar{
+    @include zero;
+    float:right;
+    width:$sidebarwidth;
+    list-style:none;
+    li{
+      margin:0 20px 0 0;
+      padding: 4px 0;
+      font-size:1em;
+      border-top:solid $black $thickness/2;
+      ul{margin:0;padding: 0 1.1em;}
+      li{border:0;list-style:square;}
+    }
+    h1{font-size:2.2em;color:$black;}
+    p{font-size: 1.1em;}
+    }
+  p{
+      text-shadow: 1px 1px 0 rgba($white,0.2);
+  }
+  form{
+    width:100%;
+    label{
+      display:block;
+      @include text;
+      text-shadow: 1px 1px 0 rgba($white,0.3);
+    }
+    textarea{
+      width:90%;
+      box-sizing:border-box;
+      border: $thickness/2 solid $black;
+      font-family:$normalfont;
+      background: transparent;
+      display: block;
+      padding: 4px;
+      overflow: auto;
+      &:focus{outline:none;border-color:$yellow;}
+    }
+    #send{
+      font-family:$normalfont;
+      background: $black;
+      border: $thickness/2 solid $black;
+      color: $white;
+      font-size:1.4em;
+      padding: 0.4em 0.3em;
+      font-weight: bold;
+      text-transform: uppercase;
+      &:hover{background:$yellow;color:$black;}
+    }
+  }
+}
+
+footer{
+  background:$footer;
+  padding:20px;
+  small{font-size:0.85em;display:block;}
+  p{color: $white;}
+  @include links($yellow,$black);
+}
+
+@import "responsive";
