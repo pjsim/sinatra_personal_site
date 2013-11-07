@@ -41,7 +41,7 @@
 
 @mixin links($color:$text,$hovercolor:$yellow,$background:$color){
 a,a:link,a:visited{
-  text-decoration: underline;
+  text-decoration: none;
   text-shadow: none;
   color:$color;
     &:hover{

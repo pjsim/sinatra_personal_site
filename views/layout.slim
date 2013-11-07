@@ -11,9 +11,10 @@ html
 		/== javascripts
 		== styles
 	body
-		h2
-			a title="Home" href="/" = settings.name
+
 		#main role='main'
+			h2
+				a title="Home" href="/" = settings.name
 			.content
 				== yield
 			== slim @menu || :menu
