@@ -60,6 +60,8 @@ __END__
 ### views ###
 
 @@index
+.css3-notification
+  p Hi, this website is under development!!
 h1 title='Hey hows it going?' HEY!!!
 p Welcome to my website!
 p My name is phil..

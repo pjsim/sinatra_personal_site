@@ -10,11 +10,13 @@ html
 		/== webfonts
 		/== javascripts
 		== styles
+	header
+		h2
+			a title="Home" href="/" = settings.name
 	body
 
 		#main role='main'
-			h2
-				a title="Home" href="/" = settings.name
+
 			.content
 				== yield
 			== slim @menu || :menu
