@@ -7,9 +7,17 @@ html
 		meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
 		title= @title || settings.name || "Untitled"
 		link rel="shortcut icon" href="/favicon.ico"
-		/== webfonts
-		/== javascripts
+		== webfonts
+		== javascripts
 		== styles
+
+ 		link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"
+		script src="http://code.jquery.com/jquery-1.9.1.js"
+		script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+		<script>$(function() {$( "#tabs" ).tabs();});</script>
+
+
+
 	header
 		h2
 			a title="Home" href="/" = settings.name
@@ -27,7 +35,7 @@ html
 					| This site has been built using 
 					a href="http://sinatrarb.com" Sinatra
 					| , 
-					a href="http://nodebox.com" Nodebox 
+					a href="http://nodebox.com" Nodebox (wrong link)
 					|  &amp; 
 					a href="http://linuxmint.com" Linux Mint
 					|, and hosted on 
